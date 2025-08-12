@@ -197,3 +197,27 @@ public class DictionaryManager : MonoBehaviour
             Debug.LogWarning($"⚠️ Item with key '{key}' already exists!");
         }
     }
+
+    // Minimal stubs to satisfy references used elsewhere in this class
+    private void DisplayAllDictionaries()
+    {
+        int itemsCount = itemDatabase != null ? itemDatabase.Count : 0;
+        int statsCount = playerStats != null ? playerStats.Count : 0;
+        int settingsCount = gameSettings != null ? gameSettings.Count : 0;
+        Debug.Log($"Items: {itemsCount}, Stats: {statsCount}, Settings: {settingsCount}");
+    }
+
+    private void UpdateCounts()
+    {
+        totalItems = itemDatabase != null ? itemDatabase.Count : 0;
+        totalStats = playerStats != null ? playerStats.Count : 0;
+        totalSettings = gameSettings != null ? gameSettings.Count : 0;
+    }
+
+    private void TestItemLookup() {}
+    private void TestStatOperations() {}
+    private void TestConfigOperations() {}
+    private void AddRandomItem() {}
+    private void RemoveRandomItem() {}
+    private void TestAllFunctions() {}
+}
