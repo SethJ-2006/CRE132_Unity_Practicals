@@ -1,7 +1,5 @@
 # CRE132 Unity Beginner Coding Course
 
-# CRE132 Unity Beginner Coding Course
-
 ## Welcome Students! 🎮
 
 This Unity project contains interactive coding exercises to teach you C# programming through game development. Each session focuses on specific programming concepts while building fun, playable examples.
