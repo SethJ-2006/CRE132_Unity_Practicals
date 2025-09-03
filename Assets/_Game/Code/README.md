@@ -118,7 +118,8 @@ Remember: Every expert was once a beginner. Take your time, be patient with your
 
 ---
 
-**📚 Instructor Resources**: Available in `/Instructor_Materials/` (outside Unity project)
+**📚 Instructor Resources**: Available outside Unity project
 
-*CRE132 Game Development Fundamentals - Northern Irish University*  
+*CRE132 Game Development Fundamentals - Ulster University*  
 *Learn C# Programming Through Unity Game Development*
+
