@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &374006109
+--- !u!1 &1000560999
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,9 +127,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 374006112}
-  - component: {fileID: 374006111}
-  - component: {fileID: 374006110}
+  - component: {fileID: 1000561002}
+  - component: {fileID: 1000561001}
+  - component: {fileID: 1000561000}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -137,21 +137,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &374006110
+--- !u!81 &1000561000
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374006109}
+  m_GameObject: {fileID: 1000560999}
   m_Enabled: 1
---- !u!20 &374006111
+--- !u!20 &1000561001
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374006109}
+  m_GameObject: {fileID: 1000560999}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -196,13 +196,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &374006112
+--- !u!4 &1000561002
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374006109}
+  m_GameObject: {fileID: 1000560999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
@@ -211,7 +211,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1943647471
+--- !u!1 &2068704396
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,49 +219,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1943647474}
-  - component: {fileID: 1943647473}
-  - component: {fileID: 1943647475}
-  - component: {fileID: 1943647472}
+  - component: {fileID: 2068704397}
+  - component: {fileID: 2068704401}
+  - component: {fileID: 2068704400}
+  - component: {fileID: 2068704399}
+  - component: {fileID: 2068704398}
   m_Layer: 0
-  m_Name: 01
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1943647472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943647471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf94d8fec6b258f45a06d610f7ca522c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runValidation: 0
---- !u!114 &1943647473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943647471}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c88ef8058003b45b1228561364f95c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1943647474
+--- !u!4 &2068704397
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943647471}
+  m_GameObject: {fileID: 2068704396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -270,39 +246,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1943647475
+--- !u!114 &2068704398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943647471}
+  m_GameObject: {fileID: 2068704396}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c69b18b5ee910646a14d57c9ba60885, type: 3}
+  m_Script: {fileID: 11500000, guid: 22c745bef51b86545a86754a402786a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: 1000
-  enemyCount: 25
-  playerLevel: 5
-  playerSpeed: 5.75
+  playerHealth: 75
+  playerLevel: 8
+  playerScore: 1250
+  playerSpeed: 5.5
+  playerAmmo: 15
+  hasKey: 1
+  doorIsLocked: 1
+  isGamePaused: 0
+  isGodMode: 0
+  difficulty: Medium
+  lowHealthThreshold: 25
+  highScoreThreshold: 1000
+  maxLevel: 20
+  lowAmmoWarning: 10
+  healthStatus: 
+  levelProgress: 
+  scoreRating: 
+  canEnterBossArea: 0
+  needsAmmoRefill: 0
+--- !u!114 &2068704399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068704396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b74fc12c6d26e4e8c0cbffa4d2a596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showMovementMessages: 1
+  showMousePosition: 0
+  messageDelay: 0.5
+  jumpCount: 0
+  totalClicks: 0
+  timePlayingSeconds: 0
+  spacePressed: 0
+  wPressed: 0
+  aPressed: 0
+  sPressed: 0
+  dPressed: 0
+  currentMousePosition: {x: 0, y: 0, z: 0}
+--- !u!114 &2068704400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068704396}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4204b59852fefb646864db81904d273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberA: 15
+  numberB: 4
+  scoreA: 1250
+  scoreB: 300
   playerHealth: 100
-  temperature: 23.5
-  isPlayerAlive: 1
-  gameIsRunning: 0
-  hasKey: 0
-  playerName: Hero
-  welcomeMessage: Welcome to CRE132!
-  emptyString: 
-  currentHealthPoints: 100
-  movementSpeed: 5
-  canJump: 1
-  firstName: John
-  hp: 100
-  speed: 5
+  damageDealt: 25
+  movementSpeed: 5.5
+  speedMultiplier: 1.8
+  additionResult: 0
+  subtractionResult: 0
+  multiplicationResult: 0
+  divisionResult: 0
+  moduloResult: 0
+--- !u!114 &2068704401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068704396}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d25d5db38e7774fa2d76608ce6fbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCount: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 374006112}
-  - {fileID: 1943647474}
+  - {fileID: 1000561002}
+  - {fileID: 2068704397}
