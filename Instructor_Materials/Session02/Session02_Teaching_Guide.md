@@ -2,7 +2,7 @@
 
 ## Session Overview
 
-**Duration**: 90-120 minutes  
+**Duration**: 60-75 minutes (SIMPLIFIED FOR BEGINNERS)
 **W3Schools Topics**: Operators, User Input, Math, If...Else, Booleans  
 **Unity Concepts**: Input System, real-time decision making, interactive feedback  
 
@@ -116,6 +116,8 @@ By the end of this session, students will:
    - Frame-rate independent input
    - Input in Update() method
    - Multiple input combinations
+   
+   **Unity 6.1 Compatibility Note**: This course uses Unity's legacy Input system (`Input.GetKeyDown()`) for simplicity. Unity 6.1 includes a newer Input System package, but the legacy system remains fully supported and is perfect for learning fundamentals.
 
 4. **Interactive Demonstrations**:
    - Students test different key combinations

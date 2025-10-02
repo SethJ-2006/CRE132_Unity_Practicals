@@ -22,20 +22,17 @@ using UnityEngine;
 /// </summary>
 public class VariableExplorer : MonoBehaviour
 {
-    #region Integer Data Types
+    #region Core Data Types - Integers
     
-    [Header("=== INTEGER DATA TYPES ===")]
-    [Tooltip("Standard integer - most commonly used for whole numbers")]
+    [Header("=== INTEGER NUMBERS ===")]
+    [Tooltip("Integer - whole numbers without decimals (e.g., 1, 100, -50)")]
     public int playerScore = 1000;
     
-    [Tooltip("Long integer - for very large whole numbers")]
-    public long worldPopulation = 8000000000L; // Note the 'L' suffix for long literals
+    [Tooltip("Integer - count of items or enemies")]
+    public int enemyCount = 25;
     
-    [Tooltip("Short integer - for small whole numbers (rarely used)")]
-    public short enemyCount = 25;
-    
-    [Tooltip("Byte - very small positive numbers (0-255)")]
-    public byte playerLevel = 42;
+    [Tooltip("Integer - player level or progress")]
+    public int playerLevel = 5;
     
     // Private integer examples (won't show in Inspector)
     private int privateScore = 500;
@@ -43,82 +40,48 @@ public class VariableExplorer : MonoBehaviour
     
     #endregion
     
-    #region Floating Point Data Types
+    #region Core Data Types - Decimal Numbers
     
-    [Header("=== FLOATING POINT DATA TYPES ===")]
-    [Tooltip("Float - decimal numbers with ~7 digits precision. Note the 'f' suffix!")]
-    public float playerSpeed = 5.75f; // 'f' suffix is required for float literals
+    [Header("=== DECIMAL NUMBERS ===")]
+    [Tooltip("Float - decimal numbers like 5.75, 0.5, -12.3. Always add 'f' at the end!")]
+    public float playerSpeed = 5.75f;
     
-    [Tooltip("Double - decimal numbers with ~15 digits precision")]
-    public double preciseCalculation = 3.141592653589793;
+    [Tooltip("Float - player health with decimal precision")]
+    public float playerHealth = 100.0f;
     
-    [Tooltip("Decimal - highest precision for financial calculations")]
-    public decimal currency = 99.99m; // 'm' suffix for decimal literals
-    
-    // Examples of different ways to write floating point numbers
-    private float temperature = 23.5f;
-    private float scientificNotation = 1.5e3f; // 1.5 * 10^3 = 1500
+    [Tooltip("Float - temperature or other measurements")]
+    public float temperature = 23.5f;
     
     #endregion
     
-    #region Boolean and Character Data Types
+    #region Core Data Types - True/False
     
-    [Header("=== BOOLEAN AND CHARACTER DATA TYPES ===")]
-    [Tooltip("Boolean - true or false values only")]
+    [Header("=== TRUE/FALSE VALUES ===")]
+    [Tooltip("Boolean - can only be true or false")]
     public bool isPlayerAlive = true;
     
     [Tooltip("Boolean - another example")]
     public bool gameIsRunning = false;
     
-    [Tooltip("Character - single letter, number, or symbol in single quotes")]
-    public char playerGrade = 'A';
-    
-    [Tooltip("Character - can also be special characters")]
-    public char specialSymbol = '@';
-    
-    // Character examples
-    private char newlineChar = '\n'; // Special escape character
-    private char tabChar = '\t';     // Tab character
+    [Tooltip("Boolean - useful for checking conditions")]
+    public bool hasKey = false;
     
     #endregion
     
-    #region String Data Type
+    #region Core Data Types - Text
     
-    [Header("=== STRING DATA TYPE ===")]
-    [Tooltip("String - text in double quotes. Can be empty or very long.")]
+    [Header("=== TEXT (STRINGS) ===")]
+    [Tooltip("String - text in double quotes like \"Hello World\"")]
     public string playerName = "Hero";
     
-    [Tooltip("String - can contain spaces and special characters")]
-    public string welcomeMessage = "Welcome to CRE132 Game Development!";
+    [Tooltip("String - can contain spaces and punctuation")]
+    public string welcomeMessage = "Welcome to CRE132!";
     
     [Tooltip("String - can be empty")]
     public string emptyString = "";
     
-    [Tooltip("String - can contain numbers (but they're treated as text)")]
-    public string versionNumber = "1.0.0";
-    
-    // String examples with special characters
-    private string multilineString = "Line 1\nLine 2\nLine 3"; // \n creates new lines
-    private string quotedString = "He said, \"Hello World!\""; // \" for quotes inside strings
-    
     #endregion
     
-    #region Constants and Readonly Variables
-    
-    [Header("=== CONSTANTS AND READONLY ===")]
-    // Constants - values that NEVER change during program execution
-    public const int MAX_PLAYERS = 4;           // const must be assigned when declared
-    public const string GAME_NAME = "CRE132";   // const values are known at compile time
-    public const float PI = 3.14159f;           // Mathematical constants are perfect for const
-    
-    // Readonly - can only be set in constructor or when declared
-    public readonly string buildDate = "2025-07-30";  // Set when declared
-    public readonly int sessionNumber = 1;            // Must be set here - Unity doesn't use constructors like regular C#
-    
-    // Static readonly - shared across all instances of this class
-    public static readonly string courseCode = "CRE132";
-    
-    #endregion
     
     #region Variable Naming Examples
     
@@ -133,7 +96,7 @@ public class VariableExplorer : MonoBehaviour
     public int hp = 100;
     public float speed = 5.0f;
     
-    // These would cause errors if uncommented (illegal variable names):
+    // These would cause errors (illegal variable names):
     // public int 123number = 5;      // Cannot start with number
     // public float my-variable = 1f; // Cannot contain hyphens
     // public string class = "test";  // Cannot use C# keywords
@@ -150,8 +113,7 @@ public class VariableExplorer : MonoBehaviour
     void Awake()
     {
         Debug.Log("=== CRE132 Session 1: Variable Explorer ===");
-        Debug.Log("Awake() - Initialising the Variable Explorer");
-        Debug.Log($"Session Number: {sessionNumber} (readonly, set at declaration)");
+        Debug.Log("Learning about the 4 core data types: int, float, bool, string");
     }
     
     /// <summary>
@@ -164,9 +126,7 @@ public class VariableExplorer : MonoBehaviour
         // Call our demonstration methods
         DemonstrateVariableDeclaration();
         ShowDataTypeExamples();
-        DemonstrateTypeCasting();
         ExploreVariableOperations();
-        ShowConstantsAndReadonly();
     }
     
     #endregion
@@ -207,78 +167,7 @@ public class VariableExplorer : MonoBehaviour
         Debug.Log($"calculatedValue after assignment: {calculatedValue}");
     }
     
-    /// <summary>
-    /// Demonstrates each data type with examples and their characteristics
-    /// </summary>
-    void ShowDataTypeExamples()
-    {
-        Debug.Log("=== Data Type Examples ===");
-        
-        // Integer types and their ranges
-        Debug.Log($"int range: {int.MinValue} to {int.MaxValue}");
-        Debug.Log($"long range: {long.MinValue} to {long.MaxValue}");
-        
-        // Floating point precision
-        float floatExample = 1.23456789f;   // Will be rounded due to precision limits
-        double doubleExample = 1.23456789012345;
-        
-        Debug.Log($"Float precision: {floatExample}");
-        Debug.Log($"Double precision: {doubleExample}");
-        
-        // Boolean examples
-        bool result1 = 5 > 3;  // true
-        bool result2 = 10 < 5; // false
-        Debug.Log($"5 > 3 is {result1}, 10 < 5 is {result2}");
-        
-        // Character examples
-        char letter = 'Z';
-        char digit = '7';      // This is a character, not a number!
-        char symbol = '$';
-        Debug.Log($"Characters: {letter}, {digit}, {symbol}");
-        
-        // String examples
-        string greeting = "Hello";
-        string target = "World";
-        string combined = greeting + " " + target + "!"; // String concatenation
-        Debug.Log($"Combined string: {combined}");
-    }
     
-    /// <summary>
-    /// Demonstrates type casting - converting between data types
-    /// </summary>
-    void DemonstrateTypeCasting()
-    {
-        Debug.Log("=== Type Casting Examples ===");
-        
-        // Implicit casting (automatic) - smaller to larger type
-        int intValue = 100;
-        long longValue = intValue;     // int automatically becomes long
-        float floatValue = intValue;   // int automatically becomes float
-        double doubleValue = floatValue; // float automatically becomes double
-        
-        Debug.Log($"Implicit casting: int {intValue} → long {longValue} → float {floatValue} → double {doubleValue}");
-        
-        // Explicit casting (manual) - larger to smaller type (data might be lost!)
-        double originalDouble = 9.78;
-        int convertedInt = (int)originalDouble;  // Explicit cast - decimal part lost!
-        
-        Debug.Log($"Explicit casting: double {originalDouble} → int {convertedInt}");
-        
-        // Type conversion methods (safer approach)
-        string numberAsString = "123";
-        int convertedNumber = Convert.ToInt32(numberAsString);
-        
-        string decimalAsString = "45.67";
-        float convertedFloat = Convert.ToSingle(decimalAsString); // Single = float
-        
-        Debug.Log($"String to int: '{numberAsString}' → {convertedNumber}");
-        Debug.Log($"String to float: '{decimalAsString}' → {convertedFloat}");
-        
-        // Converting other way - numbers to strings
-        int number = 456;
-        string numberAsText = number.ToString();
-        Debug.Log($"Int to string: {number} → '{numberAsText}'");
-    }
     
     /// <summary>
     /// Shows what you can do with variables once they're declared
@@ -318,29 +207,6 @@ public class VariableExplorer : MonoBehaviour
         Debug.Log($"changingNumber after adding 5: {changingNumber}");
     }
     
-    /// <summary>
-    /// Demonstrates constants and readonly variables
-    /// </summary>
-    void ShowConstantsAndReadonly()
-    {
-        Debug.Log("=== Constants and Readonly Variables ===");
-        
-        Debug.Log($"Game constants - MAX_PLAYERS: {MAX_PLAYERS}, GAME_NAME: {GAME_NAME}, PI: {PI}");
-        Debug.Log($"Readonly values - buildDate: {buildDate}, sessionNumber: {sessionNumber}");
-        Debug.Log($"Static readonly - courseCode: {courseCode}");
-        
-        // Constants cannot be changed - these lines would cause errors:
-        // MAX_PLAYERS = 6;     // Error: Cannot assign to const
-        // PI = 3.14f;          // Error: Cannot assign to const
-        
-        // Readonly cannot be changed after initialization - this would cause an error:
-        // sessionNumber = 2;   // Error: readonly field cannot be assigned except at declaration
-        // Note: In Unity MonoBehaviour, readonly fields must be set at declaration, not in Awake()!
-        
-        // But regular variables can be changed anytime:
-        playerScore = playerScore + 100;
-        Debug.Log($"Updated playerScore: {playerScore}");
-    }
     
     #endregion
     
@@ -354,10 +220,9 @@ public class VariableExplorer : MonoBehaviour
     public void ShowAllVariableValues()
     {
         Debug.Log("=== Current Variable Values ===");
-        Debug.Log($"Integers - playerScore: {playerScore}, worldPopulation: {worldPopulation}");
-        Debug.Log($"Floats - playerSpeed: {playerSpeed}, preciseCalculation: {preciseCalculation}");
-        Debug.Log($"Booleans - isPlayerAlive: {isPlayerAlive}, gameIsRunning: {gameIsRunning}");
-        Debug.Log($"Characters - playerGrade: '{playerGrade}', specialSymbol: '{specialSymbol}'");
+        Debug.Log($"Integers - playerScore: {playerScore}, enemyCount: {enemyCount}, playerLevel: {playerLevel}");
+        Debug.Log($"Floats - playerSpeed: {playerSpeed}, playerHealth: {playerHealth}, temperature: {temperature}");
+        Debug.Log($"Booleans - isPlayerAlive: {isPlayerAlive}, gameIsRunning: {gameIsRunning}, hasKey: {hasKey}");
         Debug.Log($"Strings - playerName: '{playerName}', welcomeMessage: '{welcomeMessage}'");
     }
     
@@ -386,36 +251,8 @@ public class VariableExplorer : MonoBehaviour
 }
 
 /*
- * SUMMARY - What students should understand after this script:
- * 
- * 1. DATA TYPES:
- *    - int: whole numbers (-2 billion to +2 billion)
- *    - float: decimal numbers (~7 digit precision) - needs 'f' suffix
- *    - double: high precision decimals (~15 digits)
- *    - bool: true or false only
- *    - char: single character in single quotes 'A'
- *    - string: text in double quotes "Hello"
- *    - long: very large whole numbers - needs 'L' suffix
- * 
- * 2. VARIABLES:
- *    - Declare with: type name = value;
- *    - Can declare first, assign later
- *    - Can change values anytime (unless const/readonly)
- *    - Use descriptive names following C# conventions
- * 
- * 3. CONSTANTS:
- *    - const: never changes, must be set when declared
- *    - readonly: can only be set at declaration (in Unity MonoBehaviour)
- *    - Use UPPERCASE for const by convention
- *    - NOTE: Unity's Awake() is not a constructor, so readonly must be set at declaration
- * 
- * 4. TYPE CASTING:
- *    - Implicit: automatic (small to large type)
- *    - Explicit: manual with (type) - might lose data
- *    - Convert class: safer for string conversion
- * 
- * 5. UNITY INTEGRATION:
- *    - Public variables show in Inspector
- *    - [Header] and [Tooltip] attributes improve Inspector
- *    - [ContextMenu] adds right-click options in Inspector
+ * SESSION 01 SUMMARY:
+ * Students learn the 4 core C# data types (int, float, bool, string), 
+ * basic variable declaration and assignment, and Unity Inspector integration.
+ * Perfect foundation for beginners!
  */

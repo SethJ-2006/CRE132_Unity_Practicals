@@ -75,16 +75,10 @@ public class CSharpBasics : MonoBehaviour
         
         // C# is case-sensitive - these are different:
         string myVariable = "Hello";
-        string MyVariable = "World";  // Different variable!
+        string MyVariable = "World";
         
         Debug.Log("Case sensitivity: " + myVariable + " vs " + MyVariable);
-        
-        // Every statement ends with a semicolon ;
         Debug.Log("Every C# statement ends with a semicolon");
-        
-        // Code blocks use curly braces { }
-        // This entire method is within braces
-        // Indentation makes code readable (though not required by C#)
         
         // Method calls require parentheses, even with no parameters
         ShowMethodCall();
@@ -112,28 +106,22 @@ public class CSharpBasics : MonoBehaviour
         Debug.Log("--- Comments and Documentation ---");
         
         // Single-line comment: Use for brief explanations
-        int number = 42; // You can also put comments at the end of lines
+        int number = 42;
         
         /*
          * Multi-line comments: Use for longer explanations
-         * Great for:
-         * - Explaining complex logic
-         * - Temporarily disabling code
-         * - Adding detailed documentation
+         * Great for explaining complex logic or temporarily disabling code
          */
-        
-        /* You can also write multi-line comments on a single line */
         
         Debug.Log("Number value: " + number);
         
-        // TODO: This is a common comment pattern for marking future work
-        // FIXME: Another common pattern for marking bugs to fix
-        // NOTE: For important information that other developers should know
+        // TODO: Common pattern for marking future work
+        // FIXME: Pattern for marking bugs to fix
+        // NOTE: For important information
         
         /* 
-         * Commented out code - sometimes useful during development:
+         * Commented out code example:
          * Debug.Log("This line won't execute");
-         * int unusedVariable = 100;
          */
     }
     

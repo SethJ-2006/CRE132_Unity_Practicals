@@ -28,6 +28,9 @@ public class Session03_StudentExercise : MonoBehaviour
     [SerializeField] private float calculatedResult;
     [SerializeField] private bool allTestsPassed;
     
+    [Header("=== EXERCISE VALIDATION ===")]
+    [SerializeField] private bool runValidation = false;
+    
     void Start()
     {
         Debug.Log("=== SESSION 03 STUDENT EXERCISE ===");
@@ -40,10 +43,55 @@ public class Session03_StudentExercise : MonoBehaviour
         ExerciseC_StringManipulation();
         ExerciseD_CreateCustomMethod();
         ExerciseE_MethodWithParameters();
-        ExerciseF_AdvancedChallenge();
+        // ExerciseF_AdvancedChallenge(); // Optional advanced challenge
         
         // Final results
         DisplayFinalResults();
+    }
+    
+    void Update()
+    {
+        if (runValidation)
+        {
+            runValidation = false;
+            ValidateExercise();
+        }
+    }
+    
+    [ContextMenu("Validate My Work")]
+    public void ValidateExercise()
+    {
+        Debug.Log("=== SESSION 03 EXERCISE VALIDATION ===");
+        int completedTasks = 0;
+        int totalTasks = 5; // A through E exercises
+        
+        // Check if basic structure exists
+        if (CheckExerciseStructure())
+        {
+            Debug.Log("✓ Exercise structure is complete");
+            completedTasks += 2;
+        }
+        else
+        {
+            Debug.LogWarning("❌ Some exercises are missing implementation");
+        }
+        
+        // Display final score
+        float percentage = (float)completedTasks / totalTasks * 100f;
+        Debug.Log($"Exercise completion: {completedTasks}/{totalTasks} ({percentage:F0}%)");
+        
+        if (percentage >= 80f)
+            Debug.Log("🎉 Excellent work! Loops and methods mastered!");
+        else if (percentage >= 60f)
+            Debug.Log("👍 Good progress! Review the missing exercises.");
+        else
+            Debug.Log("📚 Keep working on the TODO sections!");
+    }
+    
+    private bool CheckExerciseStructure()
+    {
+        // Basic validation - students should expand this
+        return !string.IsNullOrEmpty(studentName) && studentName != "Enter Your Name Here";
     }
     
     /// <summary>
@@ -57,12 +105,10 @@ public class Session03_StudentExercise : MonoBehaviour
         totalSum = 0;
         
         // TODO A1: Create a for loop that runs 'loopCount' times
-        // TODO A1: Inside the loop, add the current loop index (i) to totalSum
-        // TODO A1: Also print "Loop iteration: X" where X is the current loop number (starting from 0)
-        
-        // HINT: for (int i = 0; i < ???; i++)
-        // HINT: Use totalSum += i; to add to the total
-        // HINT: Use Debug.Log("Loop iteration: " + i);
+        // GOAL: Practice basic for loop syntax and variable accumulation
+        // NEEDED: Loop from 0 to loopCount, add index to totalSum, print each iteration
+        // EXAMPLE: for (int i = 0; i < loopCount; i++)
+        // HINT: Use totalSum += i; and Debug.Log("Loop iteration: " + i);
         
         // YOUR CODE HERE:
         
@@ -82,16 +128,10 @@ public class Session03_StudentExercise : MonoBehaviour
         int turnCounter = 1;
         
         // TODO B1: Create a while loop that continues while currentHealth > 0
-        // TODO B1: Inside the loop:
-        //          - Generate random damage between 10 and 20 (use Random.Range(10, 21))
-        //          - Subtract the damage from currentHealth
-        //          - Print "Turn X: Took Y damage, Health: Z" (replace X, Y, Z with actual values)
-        //          - Increment turnCounter
-        //          - Add a safety check: if turnCounter > 20, break out of the loop
-        
-        // HINT: while (currentHealth > 0)
-        // HINT: Use Random.Range(10, 21) for damage between 10-20
-        // HINT: Use if (turnCounter > 20) { break; }
+        // GOAL: Practice while loops with conditions and safety breaks
+        // NEEDED: Loop while health > 0, apply random damage (10-20), track turns, safety break at 20 turns
+        // EXAMPLE: while (currentHealth > 0)
+        // HINT: Use Random.Range(10, 21) and if (turnCounter > 20) { break; }
         
         // YOUR CODE HERE:
         
@@ -187,41 +227,6 @@ public class Session03_StudentExercise : MonoBehaviour
     
     
     /// <summary>
-    /// EXERCISE F: Advanced Challenge - Combine everything!
-    /// DIFFICULTY: ⭐⭐⭐⭐ Expert
-    /// </summary>
-    private void ExerciseF_AdvancedChallenge()
-    {
-        Debug.Log("--- EXERCISE F: Advanced Challenge ---");
-        
-        // TODO F1: Create a method called "ValidateAndProcessName" (see below)
-        // TODO F1: Test it with different names including: "", "   ", "JohnDoe", "a", "VeryLongNameThatExceedsTwentyCharacters"
-        
-        string[] testNames = {"", "   ", "JohnDoe", "a", "VeryLongNameThatExceedsTwentyCharacters", studentName};
-        
-        // YOUR CODE HERE - call ValidateAndProcessName for each test name:
-        
-        
-        Debug.Log("Name validation tests complete\n");
-    }
-    
-    // TODO F2: Create a method called "ValidateAndProcessName" that:
-    //          - Takes one string parameter called "inputName"
-    //          - Returns a string
-    //          - Inside the method:
-    //            * Trim whitespace from the input
-    //            * Check if the trimmed name is between 2 and 20 characters
-    //            * If valid: return the name in "Title Case" (first letter uppercase, rest lowercase)
-    //            * If invalid: return "INVALID NAME"
-    //          - Add Debug.Log statements to show the validation process
-    
-    // HINT: Use inputName.Trim(), check .Length, use string.IsNullOrEmpty()
-    // HINT: Title case: name.Substring(0, 1).ToUpper() + name.Substring(1).ToLower()
-    
-    // YOUR METHOD HERE:
-    
-    
-    /// <summary>
     /// Displays final results and checks if all exercises were completed
     /// </summary>
     private void DisplayFinalResults()
@@ -252,7 +257,7 @@ public class Session03_StudentExercise : MonoBehaviour
         Debug.Log("• String manipulation methods (Trim, ToLower, Replace, Contains)");
         Debug.Log("• Creating custom methods with parameters");
         Debug.Log("• Methods with return values");
-        Debug.Log("• Combining loops with methods for powerful programs");
+        Debug.Log("• Building a solid foundation for more advanced programming");
     }
     
     // TODO BONUS: Create any additional methods you want to experiment with!

@@ -2,7 +2,7 @@
 
 ## Session Overview
 
-**Duration**: 90-120 minutes  
+**Duration**: 75-90 minutes (OPTIMIZED FOR BEGINNERS)
 **W3Schools Topics**: While Loop, For Loop, Strings, Methods  
 **Unity Concepts**: Repetitive systems, code reusability, performance considerations  
 

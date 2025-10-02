@@ -236,37 +236,27 @@ public class Session04_StudentExercise : MonoBehaviour
         Debug.Log("Advanced collections exercise complete\n");
     }    
     /// <summary>
-    /// EXERCISE F: Combined Challenge - Put it all together!
-    /// DIFFICULTY: ⭐⭐⭐⭐ Expert
+    /// EXERCISE F: Combined Challenge - Practice what you've learned!
+    /// DIFFICULTY: ⭐⭐⭐ Advanced
     /// </summary>
     private void ExerciseF_CombinedChallenge()
     {
         Debug.Log("--- EXERCISE F: Combined Challenge ---");
         
-        // TODO F1: Create a method called "ProcessScoreArray" that:
-        //          - Takes an int[] parameter called "scores"
-        //          - Returns the average as a float
-        //          - Prints each score that is above the average
+        // TODO F1: Create a method called "PrintArrayValues" that:
+        //          - Takes an int[] parameter called "numbers"
+        //          - Uses a for loop to print each value
         //          - Call this method with your numbersArray
+        // HINT: Method signature should be: private void PrintArrayValues(int[] numbers)
         
         // YOUR METHOD CALL HERE:
         
         
-        // TODO F2: Create a method called "ManageGameList" that:
-        //          - Takes a List<string> parameter called "games"
-        //          - Removes any games with less than 5 characters
-        //          - Adds "Cyberpunk" to the list if it's not already there
-        //          - Returns the count of remaining games
-        //          - Call this method with favouriteGames
-        
-        // YOUR METHOD CALL HERE:
-        
-        
-        // TODO F3: Create a method called "CreateMovementPath" that:
-        //          - Takes no parameters
-        //          - Creates and returns a List<Vector3> with 5 random positions
-        //          - Each position should be within range (-10 to 10, -5 to 5, 0)
-        //          - Print each position as it's created
+        // TODO F2: Create a method called "AddGameToList" that:
+        //          - Takes a string parameter called "gameName"
+        //          - Adds the game to favouriteGames list
+        //          - Prints "Added [gameName] to your games!"
+        //          - Call this method with "Portal"
         
         // YOUR METHOD CALL HERE:
         
@@ -274,16 +264,13 @@ public class Session04_StudentExercise : MonoBehaviour
         Debug.Log("Combined challenge complete!\n");
     }
     
-    // TODO F4: Create your three methods here:
-    // Remember to include proper parameter types and return types!
+    // TODO F3: Create your two methods here:
+    // Remember method signatures and don't forget the semicolons!
     
-    // ProcessScoreArray method:
-    
-    
-    // ManageGameList method:
+    // PrintArrayValues method:
     
     
-    // CreateMovementPath method:
+    // AddGameToList method:
     
     
     /// <summary>
@@ -322,10 +309,11 @@ public class Session04_StudentExercise : MonoBehaviour
         Debug.Log("• How to work with dynamic Lists");
         Debug.Log("• Unity Transform component for positioning objects");
         Debug.Log("• Basic movement systems using Vector3");
-        Debug.Log("• Combining collections with Unity GameObjects");
+        Debug.Log("• Creating simple methods with parameters");
+        Debug.Log("• Building a solid foundation for advanced programming");
     }
     
     // TODO BONUS: Create any additional methods you want to experiment with!
-    // Ideas: Method to find nearest waypoint, method to create circular positions,
-    // method to sort an array, method to remove duplicates from a list
+    // Ideas: Method to count array values above 20, method to print list in reverse order,
+    // method to move object to a specific position, method to double all array values
 }

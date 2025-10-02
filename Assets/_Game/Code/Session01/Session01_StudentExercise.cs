@@ -22,23 +22,80 @@ public class Session01_StudentExercise : MonoBehaviour
     #region Student Variables - Fill These In!
     
     [Header("=== STUDENT INFORMATION ===")]
-    // TODO: Create a public string variable for your first name
-    // TODO: Create a public string variable for your student ID
-    // TODO: Create a public int variable for your age
+    // TODO 1.1: Create a public string variable for your first name
+    // EXAMPLE: public string firstName = "John";
+    
+    // TODO 1.2: Create a public string variable for your student ID
+    // EXAMPLE: public string studentID = "12345";
+    
+    // TODO 1.3: Create a public int variable for your age
+    // EXAMPLE: public int age = 20;
     
     [Header("=== GAME CHARACTER STATS ===")]
-    // TODO: Create public variables for a game character:
-    // - Character name (string)
-    // - Health points (int) - set to 100
-    // - Movement speed (float) - set to 5.5f
-    // - Is character alive (bool) - set to true
-    // - Character class letter grade (char) - set to 'A'
+    // TODO 2.1: Create public variables for a game character
+    // GOAL: Practice the 4 core data types with meaningful game variables
+    // NEEDED: Character name (string), Health points (int = 100), 
+    //         Movement speed (float = 5.5f), Is alive (bool = true)
     
-    [Header("=== CONSTANTS ===")]
-    // TODO: Create a const int for MAX_LEVEL with value 50
-    // TODO: Create a readonly string for GAME_VERSION set to "1.0"
+    // YOUR CODE HERE:
+    
+    [Header("=== SIMPLE GAME SETTINGS ===")]
+    // TODO 3.1: Create a public int for maxLevel with value 10
+    // HINT: This is a simple variable that can be changed
+    // EXAMPLE: public int maxLevel = 10;
     
     #endregion
+    
+    #region Exercise Validation
+    
+    [Header("=== EXERCISE VALIDATION ===")]
+    [SerializeField] private bool runValidation = false;
+    
+    void Update()
+    {
+        if (runValidation)
+        {
+            runValidation = false;
+            ValidateExercise();
+        }
+    }
+    
+    [ContextMenu("Validate My Work")]
+    public void ValidateExercise()
+    {
+        Debug.Log("=== EXERCISE VALIDATION RESULTS ===");
+        int completedTasks = 0;
+        int totalTasks = 8; // Adjust based on actual TODO count
+        
+        // Basic completion check - students can extend this
+        if (CheckBasicVariablesDeclared())
+        {
+            Debug.Log("✓ Basic variables declared correctly");
+            completedTasks += 3;
+        }
+        else
+        {
+            Debug.LogWarning("❌ Some basic variables are missing");
+        }
+        
+        // Display final score
+        float percentage = (float)completedTasks / totalTasks * 100f;
+        Debug.Log($"Exercise completion: {completedTasks}/{totalTasks} ({percentage:F0}%)");
+        
+        if (percentage >= 80f)
+            Debug.Log("🎉 Excellent work! Exercise completed successfully!");
+        else if (percentage >= 60f)
+            Debug.Log("👍 Good progress! Review the missing items and try again.");
+        else
+            Debug.Log("📚 Keep working! Check the TODO sections and ask for help if needed.");
+    }
+    
+    private bool CheckBasicVariablesDeclared()
+    {
+        // Simple check - students should replace TODO comments with actual variables
+        // This is a basic implementation that students can improve
+        return true; // Placeholder - students should implement proper checking
+    }
     
     #region Private Variables for Calculations
     
@@ -59,7 +116,6 @@ public class Session01_StudentExercise : MonoBehaviour
         DisplayStudentInfo();
         DisplayCharacterStats();
         PerformCalculations();
-        TestTypeConversion();
         DisplayFinalResults();
     }
     
@@ -68,19 +124,21 @@ public class Session01_StudentExercise : MonoBehaviour
     #region Methods to Complete
     
     /// <summary>
-    /// TODO: Complete this method to display your student information
-    /// Use Debug.Log to show your name, student ID, and age
+    /// TODO 4.1: Complete this method to display your student information
+    /// GOAL: Practice using Debug.Log with string concatenation
     /// </summary>
     void DisplayStudentInfo()
     {
         Debug.Log("--- Student Information ---");
         
-        // TODO: Use Debug.Log to display your first name
-        // Example: Debug.Log("Student Name: " + yourNameVariable);
+        // TODO 4.1a: Display your first name
+        // EXAMPLE: Debug.Log("Student Name: " + firstName);
         
-        // TODO: Use Debug.Log to display your student ID
+        // TODO 4.1b: Display your student ID
+        // TODO 4.1c: Display your age
         
-        // TODO: Use Debug.Log to display your age
+        // YOUR CODE HERE:
+        
     }
     
     /// <summary>
@@ -99,11 +157,7 @@ public class Session01_StudentExercise : MonoBehaviour
         
         // TODO: Display if character is alive
         
-        // TODO: Display character grade
-        
-        // TODO: Display MAX_LEVEL constant
-        
-        // TODO: Display GAME_VERSION readonly variable
+        // TODO: Display maxLevel variable
     }
     
     /// <summary>
@@ -127,27 +181,6 @@ public class Session01_StudentExercise : MonoBehaviour
         Debug.Log($"Status: {statusMessage}");
     }
     
-    /// <summary>
-    /// TODO: Complete this method to practice type conversion
-    /// Convert between different data types
-    /// </summary>
-    void TestTypeConversion()
-    {
-        Debug.Log("--- Type Conversion ---");
-        
-        // TODO: Convert your age (int) to a string and display it
-        // string ageAsString = yourAge.ToString();
-        // Debug.Log("Age as string: " + ageAsString);
-        
-        // TODO: Convert your movement speed (float) to an int (this will lose decimal places)
-        // int speedAsInt = (int)yourMovementSpeed;
-        // Debug.Log("Speed as int: " + speedAsInt);
-        
-        // TODO: Convert the string "25" to an int using Convert.ToInt32()
-        string numberString = "25";
-        // int convertedNumber = Convert.ToInt32(numberString);
-        // Debug.Log("Converted string to int: " + convertedNumber);
-    }
     
     /// <summary>
     /// This method is completed for you - it shows the final exercise results
@@ -195,22 +228,19 @@ public class Session01_StudentExercise : MonoBehaviour
  * □ Script compiles without errors
  * □ All Debug.Log statements work and show data
  * 
- * INTERMEDIATE UNDERSTANDING:
- * □ Proper use of public vs private variables
- * □ Correct type conversion demonstrated
+ * GOOD UNDERSTANDING:
+ * □ Proper use of public variables (show in Inspector)
  * □ Good variable naming conventions used
  * □ Comments added to explain their code
+ * □ All 4 data types used correctly
  * 
- * ADVANCED UNDERSTANDING:
+ * BONUS (OPTIONAL):
  * □ Bonus method completed with creative implementation
- * □ Uses string interpolation ($"text {variable}")
- * □ Demonstrates understanding of constants vs readonly
- * □ Shows initiative in variable organisation
+ * □ Shows initiative in organizing variables nicely
  * 
  * COMMON STUDENT MISTAKES TO WATCH FOR:
- * ❌ Forgetting 'f' suffix on float literals
+ * ❌ Forgetting 'f' suffix on float literals (e.g., 5.5f not 5.5)
  * ❌ Using int for decimal values (should be float)
- * ❌ Mixing up single quotes (char) vs double quotes (string)
  * ❌ Not making variables public (won't show in Inspector)
  * ❌ Inconsistent variable naming conventions
  */

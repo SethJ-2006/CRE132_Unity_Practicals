@@ -42,10 +42,8 @@ By the end of this practical, you will understand:
 
 ### **Unity Input System**
 - **`Input.GetKeyDown(KeyCode.Space)`** - Detects when Space key is pressed once
-- **`Input.GetKey(KeyCode.W)`** - Detects when W key is held down
-- **`Input.GetKeyUp(KeyCode.Space)`** - Detects when Space key is released
-- **`Input.GetMouseButtonDown(0)`** - Detects left mouse click (0=left, 1=right, 2=middle)
-- **`Input.mousePosition`** - Gets current mouse position on screen
+- We'll learn more advanced input detection in later sessions!
+- For now, focus on mastering just the Space key input
 
 ### **If/Else Statements**
 ```csharp
@@ -108,9 +106,8 @@ else
 2. **Open the Console** window: `Window > General > Console`
 3. **Try different inputs**:
    - Press **Space bar** for jump actions
-   - Press **W, A, S, D** keys for movement
-   - **Click** the mouse buttons
    - Watch the Console for responses
+   - Notice how simple input detection works
 4. **Observe the mathematical calculations** running in real-time
 
 ### **Step 4: Explore the Inspector Variables**
@@ -194,56 +191,29 @@ void PerformCalculation()
 }
 ```
 
-#### **5.4: Complete the Input Detection Methods**
-**Find input-related TODOs:**
+#### **5.4: Complete the Input Detection Method**
+**Find the input TODO:**
 ```csharp
 void CheckPlayerInput()
 {
-    // TODO: Check for Space key press and display a message
-    // TODO: Check for WASD keys and display movement messages
-    // TODO: Check for mouse clicks
+    // TODO: Check for Space key press and increment jump counter
 }
 ```
 
-**Complete with input detection:**
+**Complete with basic input detection:**
 ```csharp
 void CheckPlayerInput()
 {
     // Check for Space key press (jumping)
     if (Input.GetKeyDown(KeyCode.Space))
     {
-        Debug.Log("Player jumped!");
-    }
-    
-    // Check for movement keys (held down)
-    if (Input.GetKey(KeyCode.W))
-    {
-        Debug.Log("Moving forward...");
-    }
-    if (Input.GetKey(KeyCode.A))
-    {
-        Debug.Log("Moving left...");
-    }
-    if (Input.GetKey(KeyCode.S))
-    {
-        Debug.Log("Moving backward...");
-    }
-    if (Input.GetKey(KeyCode.D))
-    {
-        Debug.Log("Moving right...");
-    }
-    
-    // Check for mouse clicks
-    if (Input.GetMouseButtonDown(0)) // Left click
-    {
-        Debug.Log("Left mouse clicked at: " + Input.mousePosition);
-    }
-    if (Input.GetMouseButtonDown(1)) // Right click
-    {
-        Debug.Log("Right mouse clicked!");
+        jumpCount += 1;
+        Debug.Log("Jump! Total jumps: " + jumpCount);
     }
 }
 ```
+
+**Note:** You'll learn movement keys and mouse input in later sessions.
 
 #### **5.5: Save and Test Your Code**
 1. **Save the file**: `Ctrl+S` (Windows) or `Cmd+S` (Mac)

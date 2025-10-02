@@ -7,16 +7,20 @@ using UnityEngine;
 public class Session02_StudentExercise : MonoBehaviour
 {
     [Header("=== STUDENT INFORMATION ===")]
-    // TODO: Create public variables for your information
-    // - firstName (string) - your first name
-    // - studentID (string) - your student ID
-    // - favouriteNumber (int) - any number you like
+    // TODO 1.1: Create public variables for your information
+    // GOAL: Practice variable declaration with different data types
+    // NEEDED: firstName (string), studentID (string), favouriteNumber (int)
+    // EXAMPLE: public string firstName = "John";
+    
+    // YOUR CODE HERE:
     
     [Header("=== CALCULATOR VARIABLES ===")]
-    // TODO: Create public variables for a simple calculator
-    // - firstNumber (float) - set to 10f
-    // - secondNumber (float) - set to 3f
-    // - operation (string) - set to "+" (can be "+", "-", "*", "/")
+    // TODO 1.2: Create public variables for a simple calculator
+    // GOAL: Set up variables for mathematical operations
+    // NEEDED: firstNumber (float = 10f), secondNumber (float = 3f), operation (string = "+")
+    // HINT: operation can be "+", "-", "*", or "/"
+    
+    // YOUR CODE HERE:
     
     [Header("=== GAME CHARACTER STATS ===")]
     // TODO: Create public variables for a game character
@@ -30,9 +34,6 @@ public class Session02_StudentExercise : MonoBehaviour
     [Header("=== INPUT TRACKING ===")]
     // These variables track player input - don't modify these
     [SerializeField] private int jumpCount = 0;
-    [SerializeField] private int totalKeyPresses = 0;
-    [SerializeField] private bool isMoving = false;
-    [SerializeField] private Vector3 lastMouseClick;
     
     void Start()
     {
@@ -44,8 +45,9 @@ public class Session02_StudentExercise : MonoBehaviour
         TestCalculator();
         AnalyzeCharacterStats();
         
-        Debug.Log("\nPress SPACE to jump, WASD to move, mouse to click!");
+        Debug.Log("\nPress SPACE to jump!");
         Debug.Log("Press C to check character status");
+        Debug.Log("Press V to validate your work");
     }
     
     void Update()
@@ -63,6 +65,11 @@ public class Session02_StudentExercise : MonoBehaviour
         {
             ResetExercise();
         }
+        
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ValidateExercise();
+        }
     }
     
     /// <summary>
@@ -73,15 +80,17 @@ public class Session02_StudentExercise : MonoBehaviour
     {
         Debug.Log("\n--- STUDENT INFORMATION ---");
         
-        // TODO: Use Debug.Log to display your firstName
-        // Example: Debug.Log("Student Name: " + firstName);
+        // TODO 2.1a: Display your firstName
+        // EXAMPLE: Debug.Log("Student Name: " + firstName);
         
-        // TODO: Use Debug.Log to display your studentID
+        // TODO 2.1b: Display your studentID
+        // TODO 2.1c: Display your favouriteNumber
         
-        // TODO: Use Debug.Log to display your favouriteNumber
+        // TODO 2.1d: Create a calculation using your favouriteNumber
+        // EXAMPLE: int doubled = favouriteNumber * 2;
+        //          Debug.Log("Favourite number doubled: " + doubled);
         
-        // TODO: Create a calculation using your favouriteNumber
-        // Example: Calculate favouriteNumber * 2 and display the result
+        // YOUR CODE HERE:
     }
     
     /// <summary>
@@ -149,8 +158,8 @@ public class Session02_StudentExercise : MonoBehaviour
     }
     
     /// <summary>
-    /// Check for player input and respond accordingly
-    /// TODO: Complete this method
+    /// Check for player input
+    /// TODO: Complete this method (just Space key for now!)
     /// </summary>
     void CheckPlayerInput()
     {
@@ -158,24 +167,17 @@ public class Session02_StudentExercise : MonoBehaviour
         // When Space is pressed:
         //   - Increase jumpCount by 1 (jumpCount += 1)
         //   - Display "Jump! Total jumps: " + jumpCount
+        // EXAMPLE: if (Input.GetKeyDown(KeyCode.Space))
+        //          {
+        //              jumpCount += 1;
+        //              Debug.Log("Jump! Total jumps: " + jumpCount);
+        //          }
         
-        // TODO: Check for movement keys (GetKey - held down)
-        // Create a bool variable called "currentlyMoving" set to false
-        // If W key is held: set currentlyMoving to true, display "Moving forward"
-        // If A key is held: set currentlyMoving to true, display "Moving left" 
-        // If S key is held: set currentlyMoving to true, display "Moving backward"
-        // If D key is held: set currentlyMoving to true, display "Moving right"
-        // Set isMoving = currentlyMoving (for Inspector display)
+        // YOUR CODE HERE:
         
-        // TODO: Check for mouse clicks (GetMouseButtonDown)
-        // If left mouse button clicked (button 0):
-        //   - Get mouse position: Vector3 mousePos = Input.mousePosition
-        //   - Set lastMouseClick = mousePos
-        //   - Display "Left click at: " + mousePos
         
-        // TODO: Count total key presses
-        // Use Input.inputString to detect any key press
-        // If Input.inputString.Length > 0: increase totalKeyPresses by 1
+        // NOTE: We'll learn about movement keys and mouse input in later sessions!
+        // For now, just focus on detecting the Space key press
     }
     
     /// <summary>
@@ -217,15 +219,50 @@ public class Session02_StudentExercise : MonoBehaviour
     {
         Debug.Log("\n--- RESETTING EXERCISE ---");
         
-        // TODO: Reset all tracking variables to their starting values
-        // jumpCount = 0
-        // totalKeyPresses = 0  
-        // isMoving = false
-        // lastMouseClick = Vector3.zero
+        // TODO: Reset jump counter to zero
+        // jumpCount = 0;
         
         // TODO: Display a reset confirmation message
+        // Debug.Log("Exercise reset! Jump count cleared.");
         
-        // TODO: Call DisplayStudentInfo() again to show info after reset
+        // YOUR CODE HERE:
+        
+    }
+    
+    [ContextMenu("Validate My Work")]
+    public void ValidateExercise()
+    {
+        Debug.Log("=== SESSION 02 EXERCISE VALIDATION ===");
+        int completedTasks = 0;
+        int totalTasks = 6; // Variables, Calculator, Character, Input, Status, Reset
+        
+        // Check if basic structure exists
+        if (CheckVariablesExist())
+        {
+            Debug.Log("✓ Variables declared properly");
+            completedTasks += 2;
+        }
+        else
+        {
+            Debug.LogWarning("❌ Some variables are missing");
+        }
+        
+        // Display final score
+        float percentage = (float)completedTasks / totalTasks * 100f;
+        Debug.Log($"Exercise completion: {completedTasks}/{totalTasks} ({percentage:F0}%)");
+        
+        if (percentage >= 80f)
+            Debug.Log("🎉 Excellent work! Operators and control flow mastered!");
+        else if (percentage >= 60f)
+            Debug.Log("👍 Good progress! Complete the remaining TODO sections.");
+        else
+            Debug.Log("📚 Keep working! Press V to validate again.");
+    }
+    
+    private bool CheckVariablesExist()
+    {
+        // Basic validation - students should expand this
+        return true; // Placeholder for students to implement
     }
     
     /// <summary>
@@ -261,7 +298,7 @@ When you finish this exercise, you should have:
 □ DisplayStudentInfo() - shows your information and a calculation
 □ TestCalculator() - performs math operations with if/else statements
 □ AnalyzeCharacterStats() - analyzes character with conditional logic
-□ CheckPlayerInput() - detects keyboard and mouse input
+□ CheckPlayerInput() - detects Space key input
 □ CheckCharacterStatus() - complex conditional analysis (C key)
 □ ResetExercise() - resets tracking variables (R key)
 
@@ -271,7 +308,7 @@ When you finish this exercise, you should have:
 □ Comparison operators (==, !=, >, <, >=, <=)
 □ Logical operators (&&, ||, !)
 □ If/else/else if statements
-□ Input detection (GetKeyDown, GetKey, GetMouseButtonDown)
+□ Basic input detection (GetKeyDown with Space key)
 □ Complex conditional logic
 □ Division by zero protection
 
@@ -279,7 +316,7 @@ When you finish this exercise, you should have:
 □ All variables show correctly in Inspector
 □ Calculator works with different operations  
 □ Character analysis provides appropriate feedback
-□ Input detection responds to keyboard and mouse
+□ Input detection responds to Space key
 □ C key shows character status
 □ R key resets the exercise
 □ No red errors in Console
@@ -288,6 +325,6 @@ When you finish this exercise, you should have:
 - Every line of code ends with a semicolon ;
 - Use == for comparison, = for assignment
 - Check for division by zero before dividing
-- Use GetKeyDown for single presses, GetKey for held keys
+- Use GetKeyDown for single key presses (we'll learn more input types later)
 - Test your code frequently by pressing Play!
 */

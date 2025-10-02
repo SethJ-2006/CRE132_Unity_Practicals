@@ -2,7 +2,7 @@
 
 ## Session Overview
 
-**Duration**: 60-90 minutes  
+**Duration**: 45-60 minutes (SIMPLIFIED FOR BEGINNERS)
 **W3Schools Topics**: Syntax, Variables, Data Types, Output, Comments  
 **Unity Concepts**: MonoBehaviour lifecycle, Inspector integration, Debug.Log  
 
@@ -204,5 +204,6 @@ Students should feel confident with variables before moving forward!
 - `Session01_Guide.md` - This teaching guide
 
 **Unity Scene**: `01_CSharp_Basics.unity`  
-**Estimated Total Teaching Time**: 90 minutes  
-**Prerequisites**: Basic Unity interface familiarity
+**Estimated Total Teaching Time**: 60 minutes (reduced via complexity optimization)  
+**Prerequisites**: Basic Unity interface familiarity  
+**Optimization Notes**: This session has been streamlined to focus on 4 core data types only

@@ -12,16 +12,16 @@ By the end of this practical, you will understand:
 
 ## 📚 **Key Concepts to Learn**
 
-### **C# Data Types**
+### **The 4 Core C# Data Types**
 - **`int`** - Whole numbers (e.g., `42`, `-10`, `1000`)
-- **`float`** - Decimal numbers (e.g., `3.14f`, `0.5f`) *Note: needs 'f' at the end*
-- **`string`** - Text in double quotes (e.g., `"Hello World"`)
+- **`float`** - Decimal numbers (e.g., `3.14f`, `0.5f`) *Always add 'f' at the end!*
 - **`bool`** - True or false values only (e.g., `true`, `false`)
-- **`char`** - Single character in single quotes (e.g., `'A'`, '5')
+- **`string`** - Text in double quotes (e.g., `"Hello World"`)
 
-### **Variables vs Constants**
+### **Variables**
 - **Variables** can be changed: `playerScore = 100;` then later `playerScore = 200;`
-- **Constants** never change: `const int MAX_PLAYERS = 4;` (always 4)
+- **Public variables** show up in Unity's Inspector for easy editing
+- **Always give variables descriptive names** like `playerHealth` not just `hp`
 
 ### **Comments**
 - **Single-line**: `// This explains one line of code`
@@ -81,7 +81,7 @@ By the end of this practical, you will understand:
 2. **There are several sections** you need to complete:
    - Student Information variables (around line 25)
    - Game Character Stats variables (around line 30)
-   - Constants (around line 40)
+   - Simple game settings (around line 40)
    - Method implementations (multiple locations)
 
 #### **5.3: Add Your Variables**
@@ -106,16 +106,14 @@ public int age = 20;                     // Replace with your age
 // - Health points (int) - set to 100
 // - Movement speed (float) - set to 5.5f
 // - Is character alive (bool) - set to true
-// - Character class letter grade (char) - set to 'A'
 ```
 
-**Replace with actual variable declarations:**
+**Replace with actual variable declarations (using the 4 core types):**
 ```csharp
 public string characterName = "Hero";
 public int healthPoints = 100;
 public float movementSpeed = 5.5f;
 public bool isCharacterAlive = true;
-public char characterGrade = 'A';
 ```
 
 #### **5.4: Complete the Method TODOs**
@@ -164,11 +162,9 @@ public string characterName = "Warrior";
 public int healthPoints = 100;
 public float movementSpeed = 5.5f;
 public bool isCharacterAlive = true;
-public char characterGrade = 'A';
 
-[Header("=== CONSTANTS ===")]
-public const int MAX_LEVEL = 50;
-public readonly string GAME_VERSION = "1.0";
+[Header("=== SIMPLE GAME SETTINGS ===")]
+public int maxLevel = 10;
 ```
 
 ---
@@ -368,7 +364,7 @@ public float speed = 5.5f;
 // ❌ Wrong - using float for whole numbers (not wrong, but unnecessary)
 public float score = 100f;
 
-// ✅ Better - using int for whole numbers
+// ✅ Correct - using int for whole numbers
 public int score = 100;
 ```
 

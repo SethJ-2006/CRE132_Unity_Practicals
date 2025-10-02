@@ -82,7 +82,7 @@ public class ConditionalLogic : MonoBehaviour
             Debug.Log("Keep trying to reach high score!");
         }
         
-        // If-else if-else chain
+        // If-else if-else chain for multiple conditions
         if (playerHealth > 75)
         {
             Debug.Log("Health Status: Excellent");
