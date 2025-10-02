@@ -125,7 +125,6 @@ public class VariableExplorer : MonoBehaviour
         
         // Call our demonstration methods
         DemonstrateVariableDeclaration();
-        ShowDataTypeExamples();
         ExploreVariableOperations();
     }
     
@@ -250,9 +249,3 @@ public class VariableExplorer : MonoBehaviour
     #endregion
 }
 
-/*
- * SESSION 01 SUMMARY:
- * Students learn the 4 core C# data types (int, float, bool, string), 
- * basic variable declaration and assignment, and Unity Inspector integration.
- * Perfect foundation for beginners!
- */
