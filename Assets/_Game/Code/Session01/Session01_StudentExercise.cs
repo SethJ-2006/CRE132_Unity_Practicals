@@ -44,11 +44,12 @@ public class Session01_StudentExercise : MonoBehaviour
     public int healthPoints = 100;
     public float movementSpeed = 5.5f;
     public bool isCharacterAlive = true;
-    
+
     [Header("=== SIMPLE GAME SETTINGS ===")]
     // TODO 3.1: Create a public int for maxLevel with value 10
     // HINT: This is a simple variable that can be changed
     // EXAMPLE: public int maxLevel = 10;
+    public int maxLevel = 10;
     
     #endregion
     
