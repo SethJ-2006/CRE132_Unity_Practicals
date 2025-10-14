@@ -20,24 +20,29 @@ using UnityEngine;
 public class Session01_StudentExercise : MonoBehaviour
 {
     #region Student Variables - Fill These In!
-    
+
     [Header("=== STUDENT INFORMATION ===")]
     // TODO 1.1: Create a public string variable for your first name
-    // EXAMPLE: public string firstName = "John";
-    
+
     // TODO 1.2: Create a public string variable for your student ID
-    // EXAMPLE: public string studentID = "12345";
-    
+
     // TODO 1.3: Create a public int variable for your age
-    // EXAMPLE: public int age = 20;
-    
+   
+    public string firstName = "Seth";
+    public string studentID = "B01013049";
+    public int age = 18;
+
     [Header("=== GAME CHARACTER STATS ===")]
     // TODO 2.1: Create public variables for a game character
     // GOAL: Practice the 4 core data types with meaningful game variables
     // NEEDED: Character name (string), Health points (int = 100), 
     //         Movement speed (float = 5.5f), Is alive (bool = true)
-    
+
     // YOUR CODE HERE:
+    public string characterName = "Protagonist";
+    public int healthPoints = 100;
+    public float movementSpeed = 5.5f;
+    public bool isCharacterAlive = true;
     
     [Header("=== SIMPLE GAME SETTINGS ===")]
     // TODO 3.1: Create a public int for maxLevel with value 10
