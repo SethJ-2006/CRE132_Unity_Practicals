@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 /// <summary>
 /// CRE132 Session 1: Student Exercise
@@ -135,15 +136,17 @@ public class Session01_StudentExercise : MonoBehaviour
     void DisplayStudentInfo()
     {
         Debug.Log("--- Student Information ---");
-        
+
         // TODO 4.1a: Display your first name
         // EXAMPLE: Debug.Log("Student Name: " + firstName);
-        
+
         // TODO 4.1b: Display your student ID
         // TODO 4.1c: Display your age
-        
+
         // YOUR CODE HERE:
-        
+        Debug.Log("Student Name: " + firstName);
+        Debug.Log("Student ID: " + studentID);
+        Debug.Log("Student Age: " + age);
     }
     
     /// <summary>
@@ -153,15 +156,15 @@ public class Session01_StudentExercise : MonoBehaviour
     void DisplayCharacterStats()
     {
         Debug.Log("--- Character Statistics ---");
-        
+
         // TODO: Display character name
-        
+        Debug.Log("Character Name: " + characterName);
         // TODO: Display health points
-        
+        Debug.Log("Health Points: " + healthPoints);
         // TODO: Display movement speed
-        
+        Debug.Log("Movement Speed: " + movementSpeed);
         // TODO: Display if character is alive
-        
+        Debug.Log("Is Character Alive?: " + isCharacterAlive);
         // TODO: Display maxLevel variable
     }
     
